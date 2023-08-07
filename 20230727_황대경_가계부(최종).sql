@@ -7,7 +7,7 @@ DROP SEQUENCE SEQ_EX;
 CREATE SEQUENCE SEQ_EX;
 
 CREATE TABLE "EX" (
-	"INSERT_DATE"	VARCHAR2(20)  		NOT NULL,
+	"INSERT_DATE"	VARCHAR2(500)  		NOT NULL,
 	"MNO"	        NUMBER		        NOT NULL,
 	"MID"	        VARCHAR2(20)		NOT NULL,
 	"MPRICE"	        NUMBER		        NOT NULL,
@@ -93,11 +93,19 @@ INSERT INTO EX_CATEGORY VALUES ('경조사/회비')
 ;
 
 
-INSERT INTO EX VALUES ('20230727', SEQ_EX.NEXTVAL, 'KH0001', '2900', '교통/차량', '체크카드', '버스비', NULL)
+INSERT INTO EX VALUES (20230727, SEQ_EX.NEXTVAL, 'kh0001', '2900', '교통/차량', '체크카드', '버스비', NULL)
 ;
-INSERT INTO EX VALUES ('20230727', SEQ_EX.NEXTVAL, 'KH0001', '5100', '마트/편의점', '체크카드', '아보카도바나나쥬스', NULL)
+INSERT INTO EX VALUES (20230727, SEQ_EX.NEXTVAL, 'kh0001', '5100', '마트/편의점', '체크카드', '아보카도바나나쥬스', NULL)
+;
+
+INSERT INTO EX_MEMBER VALUES ('kh0001', 'kh123', '김땡땡', 'zxczxc@naver.com')
 ;
 
 commit;
 
 select * from ex;
+
+SELECT * FROM EX WHERE INSERT_DATE BETWEEN '20230808' AND '20230606';
+
+select * from EX_MEMBER;
+
