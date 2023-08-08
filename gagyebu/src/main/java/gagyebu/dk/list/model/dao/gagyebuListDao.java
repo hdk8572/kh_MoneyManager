@@ -18,6 +18,7 @@ public class gagyebuListDao {
 		String query = "SELECT INSERT_DATE, MNO, MID, MPRICE, CATEGORY, CASHCARD, MNAME, DESCRIPTION FROM EX";
 		
 		
+
 		List<gagyebuListDto> result = new ArrayList<gagyebuListDto>();
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
@@ -49,7 +50,7 @@ public class gagyebuListDao {
 		}
 		return result;
 	}
-	
+
 	public gagyebuListDto selectone(Connection conn, String insertDate){
 		gagyebuListDto result = null;
 		String query = "SELECT INSERT_DATE, MNO, MID, MPRICE, CATEGORY, CASHCARD, MNAME, DESCRIPTION FROM EX WHERE INSERT_DATE = ?";
@@ -106,5 +107,6 @@ public class gagyebuListDao {
 		return result;
 	}
 	
+
 }
 

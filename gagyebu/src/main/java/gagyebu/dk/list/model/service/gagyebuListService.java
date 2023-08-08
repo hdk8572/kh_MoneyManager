@@ -19,7 +19,7 @@ public class gagyebuListService {
 		close(conn);
 		return result;
 	}
-	
+
 	public gagyebuListDto selectOne(String insertDate) {
 		gagyebuListDto result = null;
 		Connection conn = getConnection();
@@ -28,4 +28,5 @@ public class gagyebuListService {
 		return result;
 	}
 	
+
 }

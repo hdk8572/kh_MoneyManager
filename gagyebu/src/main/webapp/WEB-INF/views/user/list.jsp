@@ -17,6 +17,7 @@
 	List<gagyebuListDto> volist = (List<gagyebuListDto>)request.getAttribute("gagyebuList");
 	%>
 	<h1>지출 내역</h1>
+
 		<div class="wrap-table">
 			<div class="sector1">	
 				<form>
@@ -98,10 +99,13 @@
 		</div>
 	<form action="${pageContext.request.contextPath}/selectDate" method="get"> <!-- 달력 % 버튼 -->
       <p><input type="date" name="searchInsertDate" id='currentDate1'> <input type="submit" value="조회"></p>
+
    	</form>
 </body>
 <script>
 	document.getElementById('currentDate').value = new Date().toISOString().substring(0, 10);
+
 	document.getElementById('currentDate1').value = new Date().toISOString().substring(0, 10);
+
 </script>
 </html>

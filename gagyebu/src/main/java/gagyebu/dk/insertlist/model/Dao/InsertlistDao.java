@@ -16,6 +16,7 @@ public class InsertlistDao {
 		int result = 0;
 		
 //		String query = "INSERT INTO EX VALUES (20230727, SEQ_EX.NEXTVAL, 'kh0001', '5100', '留덊듃/�렪�쓽�젏', '泥댄겕移대뱶', '�븘蹂댁뭅�룄諛붾굹�굹伊ъ뒪', NULL)";
+
 		String query = "INSERT INTO EX VALUES (?, (SELECT COALESCE(MAX(mno), 0) + 1 FROM EX), ?, ?, ?, ?, ?, ?)";
 //		String query = "INSERT INTO EX VALUES (?, SEQ_EX.NEXTVAL, ?, ?, ?, ?, ?, ?)";
 		
