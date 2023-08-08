@@ -7,9 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import gagyebu.dk.common.DkService;
 import gagyebu.dk.member.dto.LoginDto;
 import gagyebu.dk.member.model.dao.LoginDao;
-import gagyebu.dk.member.model.service.LoginService;
 
 @WebServlet("/login.login")
 public class LoginDoController extends HttpServlet {
@@ -26,8 +26,8 @@ public class LoginDoController extends HttpServlet {
 		System.out.println(mid);
 		System.out.println(mpwd);
 		LoginDto log = new LoginDto(mid, mpwd);  
-		String result = new LoginService().login(mid);
-		String sendUrl = request.getContextPath(); 
+		String result = new DkService().login(mid);
+		String sendUrl = request.getContextPath();
 		
 		if(mpwd == null) {
 			System.out.println("계정 없음");

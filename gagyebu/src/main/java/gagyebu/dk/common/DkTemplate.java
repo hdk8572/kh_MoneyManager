@@ -16,9 +16,9 @@ public class DkTemplate {
 			conn = DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:xe", "dk", "dk");
 			
 			if(conn!=null) {
-				System.out.println("DB 연결 성공!");
+				System.out.println("DB 연결 성공");
 			} else {
-				System.out.println("DB 연결 실패!");
+				System.out.println("DB 연결 실패");
 			}
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
