@@ -1,22 +1,11 @@
-package gagyebu.dk.user.model.Dto;
+package gagyebu.dk.insertlist.model.Dto;
 
-public class gagyebuUserDto {
+public class InsertlistDto {
 
-//			CREATE TABLE "EX" (
-//			"INSERT_DATE"	VARCHAR2(20)  		NOT NULL,
-//			"NO"	        NUMBER		        NOT NULL,
-//			"MID"	        VARCHAR2(20)		NOT NULL,
-//			"PRICE"	        NUMBER		        NOT NULL,
-//			"CATEGORY"	    VARCHAR(20)	    	NOT NULL,
-//			"CASHCARD"	    VARCHAR(20)	    	NOT NULL,
-//			"NAME"	        VARCHAR2(50)	    	NOT NULL,
-//			"DESCRIPTION"	VARCHAR(50)	    	NULL
-//		);
-	
 	private String insertDate;
-	private int mno;
+	private String mno;
 	private String mid;
-	private int mprice;
+	private String mprice;
 	private String category;
 	private String cashCard;
 	private String mname;
@@ -24,10 +13,27 @@ public class gagyebuUserDto {
 	
 	@Override
 	public String toString() {
-		return "gagyebuUserDto [insertDate=" + insertDate + ", mno=" + mno + ", mid=" + mid + ", mprice=" + mprice
+		return "InsertlistDto [insertDate=" + insertDate + ", mno=" + mno + ", mid=" + mid + ", mprice=" + mprice
 				+ ", category=" + category + ", cashCard=" + cashCard + ", mname=" + mname + ", descripion="
 				+ descripion + "]";
 	}
+	
+	
+
+	public InsertlistDto(String insertDate, String mno, String mid, String mprice, String category, String cashCard,
+			String mname, String descripion) {
+		super();
+		this.insertDate = insertDate;
+		this.mno = mno;
+		this.mid = mid;
+		this.mprice = mprice;
+		this.category = category;
+		this.cashCard = cashCard;
+		this.mname = mname;
+		this.descripion = descripion;
+	}
+
+
 
 	public String getInsertDate() {
 		return insertDate;
@@ -37,11 +43,11 @@ public class gagyebuUserDto {
 		this.insertDate = insertDate;
 	}
 
-	public int getMno() {
+	public String getMno() {
 		return mno;
 	}
 
-	public void setMno(int mno) {
+	public void setMno(String mno) {
 		this.mno = mno;
 	}
 
@@ -53,11 +59,11 @@ public class gagyebuUserDto {
 		this.mid = mid;
 	}
 
-	public int getMprice() {
+	public String getMprice() {
 		return mprice;
 	}
 
-	public void setMprice(int mprice) {
+	public void setMprice(String mprice) {
 		this.mprice = mprice;
 	}
 
@@ -92,4 +98,7 @@ public class gagyebuUserDto {
 	public void setDescripion(String descripion) {
 		this.descripion = descripion;
 	}
+	
+	
+	
 }

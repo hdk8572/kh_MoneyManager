@@ -11,15 +11,12 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class gagyebuUserselect
  */
 @WebServlet("/user/get")
-public class gagyebuUserselect extends HttpServlet {
+public class gagyebuListSelect extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public gagyebuUserselect() {
-        super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**

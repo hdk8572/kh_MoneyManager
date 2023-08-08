@@ -1,5 +1,5 @@
 <%@page import="java.util.List"%>
-<%@page import="gagyebu.dk.user.model.Dto.gagyebuUserDto"%>
+<%@page import="gagyebu.dk.list.model.dto.gagyebuListDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -9,7 +9,10 @@
 <title>가계부 등록 결과</title>
 </head>
 <body>
-	<% List<gagyebuUserDto> volist = (List<gagyebuUserDto>)request.getAttribute("gagyebuList");%>
+	<%
+	List<gagyebuListDto> volist = (List<gagyebuListDto>)request.getAttribute("gagyebuList");
+	%>
+	<h1>지출 내역</h1>
 	<form>
 		<table border="1">
 			<tr>
@@ -22,29 +25,76 @@
 				<td>이름</td>
 				<td>설명</td>
 			</tr>
-			
 			<%
 			for(int i=0;i<volist.size(); i++) {
-				gagyebuUserDto gList = volist.get(i);
+				gagyebuListDto gList = volist.get(i);
 			%>
-			
-			<td><a href="${pageContext.request.contextPath}/user/get"><%=gList.getInsertDate() %><a></td>
-			
-			<td><%=gList.getMno() %></td>
-			<td><%=gList.getMid() %></td>
-			<td><%=gList.getMprice() %></td>
-			<td><%=gList.getCategory() %></td>
-			<td><%=gList.getCashCard() %></td>
-			<td><%=gList.getMname() %></td>
-			<td><%=gList.getDescripion() %></td>
-			
+			<tr>
+				<td><a href="${pageContext.request.contextPath}/user/get"><%=gList.getInsertDate() %><a></td>
+				<td><%=gList.getMno() %></td>
+				<td><%=gList.getMid() %></td>
+				<td><%=gList.getMprice() %></td>
+				<td><%=gList.getCategory() %></td>
+				<td><%=gList.getCashCard() %></td>
+				<td><%=gList.getMname() %></td>
+				<td><%=gList.getDescripion() %></td>
+			</tr>
 			<%
 			}
 			%>
-			
-			<a href="${pageContext.request.contextPath}/">되돌아가기</a>
-			
 		</table>
+	<a href="${pageContext.request.contextPath}/">되돌아가기</a>
+</form>
+<br>
+ 	<form action="<%=request.getContextPath() %>/user/list" method="post">
+ 		<table border="1">
+	 		<tr>
+	 			<td colspan="2">지출 정보 등록</td>
+	 		</tr>
+			<tr>
+				<td>날짜</td>
+				<td><input type="text" name="insertDate"></td><button type="submit">삭제</button>
+			</tr>
+			<tr>
+				<td>등록번호</td>
+				<td><input type="text" name="mno"></td>
+			</tr>
+			<tr>
+				<td>아이디</td>
+				<td><input type="text" name="mid"></td>
+			</tr>
+			<tr>
+				<td>가격</td>
+				<td><input type="text" name="mprice"></td>
+			</tr>
+			<tr>
+				<td>분류</td>
+				<td><input type="text" name="category"></td>
+			</tr>
+			<tr>
+				<td>자산</td>
+				<td><input type="text" name="cashCard"></td>
+			</tr>
+			<tr>
+				<td>이름</td>
+				<td><input type="text" name="mname"></td>
+			</tr>
+			<tr>
+				<td>설명</td>
+				<td><input type="text" name="descripion"></td>
+			</tr>
+		</table>
+		<button type="submit">등록</button>
 	</form>
+
+
+
+	<form> <!-- 달력 % 버튼 -->
+      <p><input type="date" value=sysdate id='currentDate'></p>
+      <p><input type="submit" value="오늘날짜"></p>
+   	</form>
 </body>
+<script>
+	document.getElementById('currentDate').value = new Date().toISOString().substring(0, 10);
+</script>
 </html>

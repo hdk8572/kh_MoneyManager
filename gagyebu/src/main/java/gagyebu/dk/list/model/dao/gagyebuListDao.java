@@ -1,4 +1,4 @@
-package gagyebu.dk.user.model.Dao;
+package gagyebu.dk.list.model.dao;
 
 import static gagyebu.dk.common.DkTemplate.*;
 
@@ -9,15 +9,15 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import gagyebu.dk.user.model.Dto.gagyebuUserDto;
+import gagyebu.dk.list.model.dto.gagyebuListDto;
 
-public class gagyebuUserDao {
+public class gagyebuListDao {
 
-	public List<gagyebuUserDto> selectList(Connection conn){
+	public List<gagyebuListDto> selectList(Connection conn){
 		
 		String query = "SELECT INSERT_DATE, MNO, MID, MPRICE, CATEGORY, CASHCARD, MNAME, DESCRIPTION FROM EX";
 		
-		List<gagyebuUserDto> result = new ArrayList<gagyebuUserDto>();
+		List<gagyebuListDto> result = new ArrayList<gagyebuListDto>();
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 		try {
@@ -26,11 +26,11 @@ public class gagyebuUserDao {
 			
 			
 			while(rs.next()==true) {
-				gagyebuUserDto dto = new gagyebuUserDto();
+				gagyebuListDto dto = new gagyebuListDto();
 				dto.setInsertDate(rs.getString("INSERT_DATE"));
-				dto.setMno(rs.getInt("MNO"));
+				dto.setMno(rs.getString("MNO"));
 				dto.setMid(rs.getString("MID"));
-				dto.setMprice(rs.getInt("MPRICE"));
+				dto.setMprice(rs.getString("MPRICE"));
 				dto.setCategory(rs.getString("CATEGORY"));
 				dto.setCashCard(rs.getString("CASHCARD"));
 				dto.setMname(rs.getString("MNAME"));
@@ -38,6 +38,7 @@ public class gagyebuUserDao {
 				
 				result.add(dto);
 			}
+			System.out.println(result);
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
