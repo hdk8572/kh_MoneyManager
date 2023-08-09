@@ -34,7 +34,7 @@ public class UserDao {
 				dto.setCategory(rs.getString("CATEGORY"));
 				dto.setCashCard(rs.getString("CASHCARD"));
 				dto.setMname(rs.getString("MNAME"));
-				dto.setDescripion(rs.getString("DESCRIPTION"));
+				dto.setDescription(rs.getString("DESCRIPTION"));
 				
 				result.add(dto);
 			}
@@ -65,7 +65,7 @@ public class UserDao {
 			stmt.setString(4, dto.getCategory());
 			stmt.setString(5, dto.getCashCard());
 			stmt.setString(6, dto.getMname());
-			stmt.setString(7, dto.getDescripion());
+			stmt.setString(7, dto.getDescription());
 			
 			result = stmt.executeUpdate();
 		} catch (SQLException e) {

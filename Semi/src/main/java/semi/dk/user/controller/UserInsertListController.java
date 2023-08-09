@@ -34,9 +34,9 @@ public class UserInsertListController extends HttpServlet {
 		String category = request.getParameter("category");
 		String cashCard = request.getParameter("cashCard");
 		String mname = request.getParameter("mname");
-		String descripion = request.getParameter("descripion");
+		String description = request.getParameter("description");
 		
-		UserDto idto = new UserDto(insertDate, mno, mid, mprice, category, cashCard, mname, descripion);
+		UserDto idto = new UserDto(insertDate, mno, mid, mprice, category, cashCard, mname, description);
 		
 		int result = service.InsertList(idto);
 		System.out.println(result);

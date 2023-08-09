@@ -9,13 +9,13 @@ public class UserDto {
 	private String category;
 	private String cashCard;
 	private String mname;
-	private String descripion;
+	private String description;
 	
 	@Override
 	public String toString() {
 		return "gagyebuListDto [insertDate=" + insertDate + ", mno=" + mno + ", mid=" + mid + ", mprice=" + mprice
-				+ ", category=" + category + ", cashCard=" + cashCard + ", mname=" + mname + ", descripion="
-				+ descripion + "]";
+				+ ", category=" + category + ", cashCard=" + cashCard + ", mname=" + mname + ", description="
+				+ description + "]";
 	}
 
 	public UserDto() {
@@ -23,7 +23,7 @@ public class UserDto {
 	}
 
 	public UserDto(String insertDate, String mno, String mid, String mprice, String category, String cashCard,
-			String mname, String descripion) {
+			String mname, String description) {
 		super();
 		this.insertDate = insertDate;
 		this.mno = mno;
@@ -32,7 +32,7 @@ public class UserDto {
 		this.category = category;
 		this.cashCard = cashCard;
 		this.mname = mname;
-		this.descripion = descripion;
+		this.description = description;
 	}
 
 	public String getInsertDate() {
@@ -91,12 +91,12 @@ public class UserDto {
 		this.mname = mname;
 	}
 
-	public String getDescripion() {
-		return descripion;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setDescripion(String descripion) {
-		this.descripion = descripion;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	
 }

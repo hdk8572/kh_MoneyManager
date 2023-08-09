@@ -37,7 +37,7 @@
 				<td><%=ul.getCategory() %></td>
 				<td><%=ul.getCashCard() %></td>
 				<td><%=ul.getMname() %></td>
-				<td><%=ul.getDescripion() %></td>
+				<td><%=ul.getDescription() %></td>
 			</tr>
 			<%
 			}
