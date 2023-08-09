@@ -1,0 +1,57 @@
+package semi.dk.login.model.dto;
+
+public class LoginDto {
+	
+	/*"MID"	VARCHAR2(20)		NOT NULL,
+	"MPWD"	VARCHAR2(20)		NOT NULL,
+	"MNAME"	VARCHAR2(20)		NOT NULL,
+	"MEMAIL"	VARCHAR2(50)		NOT NULL*/
+	
+	private String mid;
+	private String mpwd; 
+	private String mname;
+	private String memail;
+	
+	@Override
+	public String toString() {
+		return "gagyabuDao [mid=" + mid + ", mpwd=" + mpwd + ", mname=" + mname + ", memail=" + memail + "]";
+	}
+
+	public LoginDto(String mid, String mpwd) {
+		super();
+		this.mid = mid;
+		this.mpwd = mpwd;
+	}
+
+	public String getMid() {
+		return mid;
+	}
+
+	public void setMid(String mid) {
+		this.mid = mid;
+	}
+
+	public String getMpwd() {
+		return mpwd;
+	}
+
+	public void setMpwd(String mpwd) {
+		this.mpwd = mpwd;
+	}
+
+	public String getMname() {
+		return mname;
+	}
+
+	public void setMname(String mname) {
+		this.mname = mname;
+	}
+
+	public String getMemail() {
+		return memail;
+	}
+
+	public void setMemail(String memail) {
+		this.memail = memail;
+	}
+}
