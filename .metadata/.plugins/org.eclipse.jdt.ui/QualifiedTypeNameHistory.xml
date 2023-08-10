@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="gagyebu.dk.model.Dto.gagyebuDto"/>
+    <fullyQualifiedTypeName name="java.beans.Statement"/>
+    <fullyQualifiedTypeName name="java.sql.Statement"/>
+    <fullyQualifiedTypeName name="gagyebu.dk.user.model.service.gagyebuUserService"/>
+    <fullyQualifiedTypeName name="gagyebu.dk.user.model.Dto.gagyebuUserDto"/>
+    <fullyQualifiedTypeName name="gagyebu.dk.member.dto.gagyabuDto"/>
+    <fullyQualifiedTypeName name="gagyebu.dk.user.model.Dao.gagyebuUserDao"/>
+    <fullyQualifiedTypeName name="gagyebu.dk.member.model.dao.LoginDao"/>
+    <fullyQualifiedTypeName name="gagyebu.dk.member.controller.LoginDoController"/>
+    <fullyQualifiedTypeName name="gagyebu.dk.member.dto.LoginDto"/>
+    <fullyQualifiedTypeName name="gagyebu.dk.member.model.service.LoginService"/>
+    <fullyQualifiedTypeName name="gagyebu.dk.common.DkTemplate"/>
+    <fullyQualifiedTypeName name="java.sql.DriverManager"/>
+    <fullyQualifiedTypeName name="gagyebu.dk.insertlist.model.Dto.InsertlistDto"/>
+    <fullyQualifiedTypeName name="gagyebu.dk.insertlist.model.Dao.InsertlistDao"/>
+    <fullyQualifiedTypeName name="gagyebu.dk.list.model.service.gagyebuListService"/>
+    <fullyQualifiedTypeName name="gagyebu.dk.list.model.dto.gagyebuListDto"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="semi.dk.common.DkTemplate"/>
+    <fullyQualifiedTypeName name="semi.dk.model.dto.ListDto"/>
+    <fullyQualifiedTypeName name="semi.dk.common.DkService"/>
+    <fullyQualifiedTypeName name="semi.dk.user.model.dao.UserDao"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="org.apache.tomcat.dbcp.dbcp2.PStmtKey"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="com.google.gson.Gson"/>
+    <fullyQualifiedTypeName name="java.io.PrintWriter"/>
+    <fullyQualifiedTypeName name="semi.dk.user.model.dto.UserDto"/>
+    <fullyQualifiedTypeName name="semi.dk.user.model.service.UserService"/>
+</qualifiedTypeNameHistroy>

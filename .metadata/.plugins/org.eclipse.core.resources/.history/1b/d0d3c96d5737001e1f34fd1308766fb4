@@ -1,0 +1,10 @@
+package semi.dk.member.login.service;
+
+import semi.dk.member.login.model.dao.LoginDao;
+import semi.dk.member.login.model.dto.LoginDto;
+
+public class LoginService {
+	
+	private LoginDao dao = new LoginDao();
+	
+}

@@ -1,0 +1,14 @@
+INDEX VERSION 1.131+C:\_Workspace\Github\kh_MoneyManager\.metadata\.plugins\org.eclipse.jdt.core
+1213771846.index
+3834035318.index
+1612914615.index
+534645151.index
+588654034.index
+260087872.index
+456412948.index
+1773516505.index
+3931955673.index
+2088695190.index
+1865797976.index
+4076757829.index
+2903609793.index

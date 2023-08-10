@@ -1,0 +1,50 @@
+1691377795507	Rename package 'gagyebu'
+1691378672761	Move 'list.jsp' to 'user'
+1691378815629	Delete element
+1691378825980	Rename resource 'LIST.jsp'
+1691378852886	Delete element
+1691378997870	Delete element
+1691378998584	Delete element
+1691379047565	Delete element
+1691380031904	Rename resource 'list.jsp'
+1691380033452	Move 'login.jsp' to 'webapp'
+1691380139558	Rename package 'gagyebu.dk.model.service'
+1691380156061	Rename package 'gagyebu.dk.model.controller'
+1691380159437	Rename package 'gagyebu.dk.model.Dto'
+1691380163745	Rename package 'gagyebu.dk.model.Dao'
+1691380175310	Rename type 'gagyebuDto'
+1691380179555	Rename type 'gagyebuDao'
+1691380183936	Rename type 'gagyebuList'
+1691389843034	Rename compilation unit 'gagyabuService.java'
+1691389848888	Rename type 'gagyabuDao'
+1691389852401	Rename type 'gagyabuDto'
+1691392237131	Delete element
+1691397132142	Move 'userInsert.jsp' to 'member'
+1691397137940	Rename resource 'userInsert.jsp'
+1691464667984	Rename package 'gagyebu.dk.user.model.controller'
+1691464677847	Rename type 'gagyebuUserList'
+1691464694955	Rename type 'gagyebuUserselect'
+1691464703838	Rename type 'gagyebuUserDao'
+1691464710465	Rename package 'gagyebu.dk.user.model.Dao'
+1691464717278	Rename package 'gagyebu.dk.user.model.service'
+1691464722528	Rename type 'gagyebuUserService'
+1691464727918	Rename package 'gagyebu.dk.user.model.Dto'
+1691464733445	Rename type 'gagyebuUserDto'
+1691464984777	Rename package 'gagyebu.dk.member.model.service'
+1691465014904	Move compilation unit
+1691465024019	Rename type 'LoginService'
+1691465453952	Rename package 'gagyebu.dk.insert.model.Dto'
+1691465457760	Rename package 'gagyebu.dk.insert.model.Dao'
+1691465463033	Rename type 'InsertUserDto'
+1691465466305	Rename type 'InsertUserDao'
+1691465544973	Rename package 'gagyebu.dk.list.model.Dto'
+1691465547337	Rename package 'gagyebu.dk.list.model.Dao'
+1691465638709	Delete element
+1691539322799	Rename type 'gagyebuListService'
+1691539325001	Rename type 'gagyebuListDto'
+1691539327321	Rename type 'gagyebuListDao'
+1691539329082	Rename type 'gagyebuListSelect'
+1691539330873	Rename type 'gagyebuListList'
+1691542954125	Rename type 'gagyebuListOne'
+1691544303666	Copy files
+1691544357710	Copy compilation unit

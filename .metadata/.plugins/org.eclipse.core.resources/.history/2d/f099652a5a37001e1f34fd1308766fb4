@@ -1,0 +1,5 @@
+package semi.dk.member.login.controller;
+
+public class LoginDoController {
+
+}

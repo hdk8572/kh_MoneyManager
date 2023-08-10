@@ -1,0 +1,16 @@
+package semi.dk.member.login.service;
+
+import static semi.dk.common.DkTemplate.*;
+
+import semi.dk.member.login.model.dao.LoginDao;
+
+public class LoginService {
+	
+	private LoginDao dao = new LoginDao();
+	
+	public int login(LoginDao loginvo) {
+		int result = 0;
+		conn = getConnection();
+	}
+	
+}

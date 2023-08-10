@@ -1,0 +1,19 @@
+1691546506761	Move compilation unit
+1691546508228	Delete element
+1691546515010	Rename type 'DkService'
+1691546664554	Rename type 'UserDao'
+1691546725195	Rename compilation unit 'UserInsertDao.java'
+1691547586584	Delete element
+1691547591437	Rename type 'UserListDao'
+1691548438601	Rename package 'semi.dk.user.model.controller'
+1691626101798	Delete element
+1691655775036	Rename package 'semi.dk.login.model.dto'
+1691655784728	Rename package 'semi.dk.login.model.dao'
+1691655790932	Rename package 'semi.dk.login.service'
+1691655796372	Rename package 'semi.dk.login.controller'
+1691656073100	Rename type 'LoginDto'
+1691656079252	Rename type 'LoginDao'
+1691656084656	Rename type 'LoginController'
+1691656091912	Rename type 'LoginService'
+1691657051329	Rename type 'MemberController'
+1691657089298	Delete element

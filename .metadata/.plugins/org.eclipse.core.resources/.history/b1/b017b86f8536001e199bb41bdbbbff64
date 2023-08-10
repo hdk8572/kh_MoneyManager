@@ -1,0 +1,38 @@
+package semi.dk.ajax.controller;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.google.gson.Gson;
+
+import semi.dk.user.model.dto.UserDto;
+import semi.dk.user.model.service.UserService;
+
+@WebServlet("/ajaxuser/main")
+public class AjaxPageController extends HttpServlet {
+	private UserService service = new UserService();
+	
+	private static final long serialVersionUID = 1L;
+       
+    public AjaxPageController() {
+        super();
+    }
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		List<UserDto> ulist = service.selectList();
+		Gson gson = new Gson();
+		request.setAttribute("ulist", gson.toJson(ulist));
+		request.getRequestDispatcher("/WEB-INF/ajaxuser/main.jsp").forward(request, response);
+		System.out.println("1단계 접속");
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	}
+
+}

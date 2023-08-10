@@ -1,0 +1,53 @@
+package semi.dk.ajax;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.google.gson.Gson;
+
+import semi.dk.user.model.dto.UserDto;
+import semi.dk.user.model.service.UserService;
+
+@WebServlet("/ajaxInsert")
+public class AjaxTextController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    public AjaxTextController() {
+    }
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String insertDate = request.getParameter("insertDate");
+		String mno = request.getParameter("mno");
+		String mid = request.getParameter("mid");
+		String mprice = request.getParameter("mprice");
+		String category = request.getParameter("category");
+		String cashCard = request.getParameter("cashCard");
+		String mname = request.getParameter("mname");
+		String descripion = request.getParameter("descripion");
+				
+		UserDto vo = new UserDto(insertDate, mno, mid, mprice, category, cashCard, mname, descripion);
+		List<UserDto> userList = new UserService().InsertGetList(vo);
+		
+		if(userList != null) {
+			
+		}
+		int result = 1;
+		PrintWriter out = response.getWriter();
+		out.println(result);
+		out.flush();
+		out.close();
+	}
+
+}

@@ -1,0 +1,7 @@
+package semi.dk.member.login.service;
+
+public class LoginService {
+	
+	User
+	
+}

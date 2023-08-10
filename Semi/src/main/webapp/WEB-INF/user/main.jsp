@@ -1,18 +1,15 @@
-<%@page import="semi.dk.user.model.dto.UserDto"%>
-<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 </head>
 <body>
-
-	<% List<UserDto> volist = (List<UserDto>)request.getAttribute("ulist");%>
-
-	<form>
+	<div id="wrap-list" >
 		<table border="1">
 			<tr>
 				<td>날짜</td>
@@ -24,32 +21,23 @@
 				<td>이름</td>
 				<td>설명</td>
 			</tr>
-			<%
-			for(int i=0;i<volist.size(); i++) {
-				UserDto ul = volist.get(i);
-			%>
+			<c:forEach items="${ulist}" var="ul">			
 			<tr>
-				<%-- <td><a href="${pageContext.request.contextPath}/user/get"><%=gList.getInsertDate() %><a></td> --%>
-				<td><%=ul.getInsertDate() %></td>
-				<td><%=ul.getMno() %></td>
-				<td><%=ul.getMid() %></td>
-				<td><%=ul.getMprice() %></td>
-				<td><%=ul.getCategory() %></td>
-				<td><%=ul.getCashCard() %></td>
-				<td><%=ul.getMname() %></td>
-				<td><%=ul.getDescription() %></td>
+				<td>${ul.insertDate}</td>
+				<td>${ul.mno}</td>
+				<td>${ul.mid}</td>
+				<td>${ul.mprice}</td>
+				<td>${ul.category}</td>
+				<td>${ul.cashCard}</td>
+				<td>${ul.mname}</td>
+				<td>${ul.description}</td>
 			</tr>
-			<%
-			}
-			%>
+			</c:forEach>
 		</table>
+	</div>
 		<a href="${pageContext.request.contextPath}/">되돌아가기</a>
-	</form>
-	<form action="<%=request.getContextPath() %>/user/main.main" method="post">	
+	<form id="frmInsert">
  		<table border="1">
-	 		<tr>
-	 			<td colspan="2">지출 정보 등록</td>
-	 		</tr>
 			<tr>
 				<td>날짜</td>
 				<td><input type="date" name="insertDate" id="currentDate"></td>
@@ -60,35 +48,103 @@
 			</tr> -->
 			<tr>
 				<td>아이디</td>
-				<td><input type="text" name="mid" required></td>
+				<td><input type="text" name="mid" ></td>
 			</tr>
 			<tr>
 				<td>가격</td>
-				<td><input type="text" name="mprice" required></td>
+				<td><input type="text" name="mprice" ></td>
 			</tr>
 			<tr>
 				<td>분류</td>
-				<td><input type="text" name="category" required></td>
+				<td><input type="text" name="category" ></td>
 			</tr>
 			<tr>
 				<td>자산</td>
-				<td><input type="text" name="cashCard" required></td>
+				<td><input type="text" name="cashCard" ></td>
 			</tr>
 			<tr>
 				<td>이름</td>
-				<td><input type="text" name="mname" required></td>
+				<td><input type="text" name="mname" ></td>
 			</tr>
 			<tr>
 				<td>설명</td>
 				<td><input type="text" name="descripion"></td>
 			</tr>
 		</table>
-		<button type="submit">등록</button>
+		<button type="button" id="btn_Insert">등록</button>
 	</form>
-	
 </body>
 <script>
 	document.getElementById('currentDate').value = new Date().toISOString().substring(0, 10);
-	document.getElementById('currentDate1').value = new Date().toISOString().substring(0, 10);
+	
+  	$("#btn_Insert").click(insertListClickHandler);
+	
+	function insertListClickHandler() {
+		var dataQuery = $("#frmInsert").serialize();
+		console.log(dataQuery);
+		$.ajax({
+			url: "${pageContext.request.contextPath}/ajaxInsert"
+			,type: "post"
+			//,contentType:""
+			,data: $("#frmInsert").serialize()
+			
+			,dataType:"json"
+			,success: function(result){
+				console.log("success:");
+				console.log(result);
+				displayList(result);
+			}
+			,error: function(){
+				console.log("error:");
+				console.log(result);
+			}
+		})
+	}
+	function displayList(data) {
+		var htmlVal="";
+		if(data==null || data.length == 0){
+			alert("등록에 실패하였습니다. 다시 입력을시도해주세요.");
+		} else {
+			htmlVal+=`
+				<table border="1">
+				<tbody>
+				<tr>
+					<td>날짜</td>
+					<td>번호</td>
+					<td>등록아이디</td>
+					<td>가격</td>
+					<td>품목분류</td>
+					<td>자산</td>
+					<td>이름</td>
+					<td>설명</td>
+				</tr>
+				`;
+				for(var i=0;i<data.length;i++){
+					var ul = data[i];
+				htmlVal+=`
+				<tr>
+					<td>\${ul.insertDate}</td>
+					<td>\${ul.mno}</td>
+					<td>\${ul.mid}</td>
+					<td>\${ul.mprice}</td>
+					<td>\${ul.category}</td>
+					<td>\${ul.cashCard}</td>
+					<td>\${ul.mname}</td>
+					<td>\${ul.description}</td>
+				</tr>
+				`;
+				}
+			htmlVal+=`
+			</tbody>
+				</table>		
+			`;
+			$("#wrap-list").html(htmlVal);
+			alert("등록에 성공");
+			$("#frmInsert").value() = [];
+
+	//$("#wrap-list table>tbody>tr:first-child:not").remove();
+	//$("#wrap-list table>tbody").append(htmlVal);
+		}
+	}
 </script>
 </html>
