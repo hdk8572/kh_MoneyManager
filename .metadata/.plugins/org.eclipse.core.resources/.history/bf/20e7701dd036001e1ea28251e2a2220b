@@ -1,0 +1,114 @@
+<%@page import="semi.dk.user.model.dto.UserDto"%><%@page import="java.util.List"%><%@ page language="java" contentType="text/html; charset=UTF-8"    pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<style>
+.grid-wrap{
+	display:grid;
+	grid-template-columns:  auto auto;
+}
+</style>
+</head>
+<body>
+	<h2>ajax test</h2>
+	<% List<UserDto> volist = (List<UserDto>)request.getAttribute("uslist"); %>
+	<form>
+		<table border="1">
+			<tr>
+				<td>날짜</td>
+				<td>번호</td>
+				<td>등록아이디</td>
+				<td>가격</td>
+				<td>품목분류</td>
+				<td>자산</td>
+				<td>이름</td>
+				<td>설명</td>
+			</tr>
+			<c:forEach items="${uslist}" var="uslist">
+			<tr>
+				<td>${uslist.insertDate}</td>
+				<td>${uslist.mno}</td>
+				<td>${uslist.mid}</td>
+				<td>${uslist.mprice}</td>
+				<td>${uslist.category}</td>
+				<td>${uslist.cashCard}</td>
+				<td>${uslist.mname}</td>
+				<td>${uslist.description}</td>
+			</tr>
+			</c:forEach>
+		</table>
+		<a href="${pageContext.request.contextPath}/">되돌아가기</a>
+	</form>
+	<form action="<%=request.getContextPath() %>/user/main.main" method="post">	
+ 		<table border="1">
+	 		<!-- <tr>
+	 			<td colspan="2">지출 정보 등록</td>
+	 		</tr> -->
+			<tr>
+				<td>날짜</td>
+				<td><input type="date" name="insertDate" id="currentDate"></td>
+			</tr>
+			<tr>
+				<td>등록번호</td>
+				<td><input type="text" name="mno"></td>
+			</tr>
+			<tr>
+				<td>아이디</td>
+				<td><input type="text" name="mid" ></td>
+			</tr>
+			<tr>
+				<td>가격</td>
+				<td><input type="text" name="mprice" ></td>
+			</tr>
+<!-- 			<tr>
+				<td>분류</td>
+				<td><input type="text" name="category" ></td>
+			</tr> -->
+			<tr>
+				<td>분류</td>
+				<td>
+					<select name=category>
+						<option value="교통/차량">교통/차량</option>					
+						<option value="식비">식비</option>
+						<option value="주거/통신비">주거/통신비</option>
+						<option value="문화생활">문화생활</option>
+						<option value="마트/편의점">마트/편의점</option>
+						<option value="교통/차량">교통/차량</option>
+						<option value="교통/차량">교통/차량</option>
+						<option value="교통/차량">교통/차량</option>
+						<option value="교통/차량">교통/차량</option>
+						
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>자산</td>
+				<td><input type="text" name="cashCard" ></td>
+			</tr>
+			<tr>
+				<td>이름</td>
+				<td><input type="text" name="mname" ></td>
+			</tr>
+			<tr>
+				<td>설명</td>
+				<td><input type="text" name="descripion"></td>
+			</tr>
+		</table>
+		<button type="submit" id="ajaxlist">등록</button>
+	</form>
+
+	<script>
+		document.getElementById('currentDate').value = new Date().toISOString().substring(0, 10);
+		
+		$("#ajaxlist").click(ajaxListClickHandler);
+		
+		function ajaxListClickHandler() {
+			console.log("ajaxlist click");
+		}
+	</script>
+</body>
+</html>

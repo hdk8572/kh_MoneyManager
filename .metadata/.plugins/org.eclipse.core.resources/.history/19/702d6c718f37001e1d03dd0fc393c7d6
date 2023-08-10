@@ -1,0 +1,53 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입</title>
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+</head>
+<body>
+	<h1>회원가입</h1>
+	<div class="signup">
+		id: <input type="text" name="mid" required="required"><br>
+		pw: <input type="password" name="mpwd" required="required"><br>
+		이름: <input type="text" name="mname" required="required"><br>
+		이메일: <input type="text" name="memail" required="required"><br>
+	</div>
+		<button type="button" id="btn-signup">회원가입</button>
+		<button type="button">뒤로가기</button>
+<script>
+ 	$("#btn-signup").click(signupClickHandler);
+ 	
+	function signupClickHandler() {
+		console.log("회원가입 버튼 클릭!")
+		var dataarr = [];
+		$(".signup").each(function(idx) {
+			var dataObj = {
+					mid: $(this).find("[name=mid]").val()
+					, mpwd: $(this).find("[name=mpwd]").val()
+					, mname: $(this).find("[name=mname]").val()
+					, memail: $(this).find("[name=memail]").val()
+					};
+			dataArr.push(dataObj);
+		});
+	console.log(dataArr);	
+	console.log(JSON.Stringify(dataArr));
+	$.ajax({
+			url:"${pageContext.request.contextPath}/signup"
+			,type:"post"
+			,data: JSON.stringify(dataArr)
+			,success: function(result){
+				console.log("success:");
+				console.log(result);
+			}
+			,error: function(){
+				console.log("error:");
+				console.log(result);
+			}
+		});
+	}
+</script>
+</body>
+</html>

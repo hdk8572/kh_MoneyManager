@@ -53,19 +53,46 @@
 			</tr> -->
 			<tr>
 				<td>아이디</td>
-				<td><input type="text" name="mid" ></td>
+				<td><input type="text" value="${SsLoginId}" name="mid" readonly></td>
 			</tr>
 			<tr>
 				<td>가격</td>
 				<td><input type="text" name="mprice" ></td>
 			</tr>
-			<tr>
+<!-- 			<tr>
 				<td>분류</td>
 				<td><input type="text" name="category" ></td>
-			</tr>
+			</tr> -->
 			<tr>
+				<td>분류</td>
+				<td>
+				<select>
+				<option>식비</option>
+				<option>교통/차량</option>
+				<option>주거/통신비</option>
+				<option>문화생활</option>
+				<option>마트/편의점</option>
+				<option>패션/미용</option>
+				<option>생활용품</option>
+				<option>건강</option>
+				<option>교육</option>
+				<option>경조사/회비</option>
+				</select>
+				</td>
+			</tr>
+<!-- 			<tr>
 				<td>자산</td>
 				<td><input type="text" name="cashCard" ></td>
+			</tr> -->
+			<tr>
+				<td>자산</td>
+				<td>
+				<select>
+				<option>현금</option>
+				<option>체크카드</option>
+				<option>신용카드</option>
+				</select>
+				</td>
 			</tr>
 			<tr>
 				<td>이름</td>

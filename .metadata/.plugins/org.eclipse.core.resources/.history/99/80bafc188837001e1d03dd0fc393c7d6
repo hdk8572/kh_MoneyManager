@@ -1,0 +1,29 @@
+package semi.dk.member.controller;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/user/signup")
+public class SignupController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    public SignupController() {
+    }
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String mid = request.getParameter("mid");
+		String mpwd = request.getParameter("mpwd");
+		String mname = request.getParameter("mname");
+		String memail = request.getParameter("memail");
+		
+	}
+
+}

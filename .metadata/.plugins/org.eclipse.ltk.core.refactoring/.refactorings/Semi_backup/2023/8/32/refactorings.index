@@ -17,3 +17,8 @@
 1691656091912	Rename type 'LoginService'
 1691657051329	Rename type 'MemberController'
 1691657089298	Delete element
+1691676233681	Rename package 'semi.dk.member.login.controller'
+1691676238884	Rename package 'semi.dk.member.login.model.dao'
+1691676244213	Rename package 'semi.dk.member.login.model.dto'
+1691676252245	Rename package 'semi.dk.member.login.service'
+1691676399712	Rename type 'InsertMemberController'
