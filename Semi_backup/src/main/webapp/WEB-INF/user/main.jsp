@@ -53,7 +53,7 @@
 			</tr> -->
 			<tr>
 				<td>아이디</td>
-				<td><input type="text" value="${SsLoginId}" name="mid" readonly></td>
+				<td><input type="text" value="${currentId}" name="mid" readonly></td>
 			</tr>
 			<tr>
 				<td>가격</td>

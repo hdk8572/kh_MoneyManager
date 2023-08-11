@@ -1,9 +1,7 @@
-INDEX VERSION 1.4+C:\.workspace\Github\kh_MoneyManager\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-4082783822.index
-1100757513.index
-1213771846.index
+INDEX VERSION 1.4+C:\_Workspace\Github\kh_MoneyManager\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
 2903609793.index
-3201917697.index
-2364773454.index
+428134767.index
+1100757513.index
 3949245123.index
-2686283509.index
+1213771846.index
+2382335509.index
