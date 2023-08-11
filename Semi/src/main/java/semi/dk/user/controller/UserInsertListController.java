@@ -32,6 +32,7 @@ public class UserInsertListController extends HttpServlet {
 		String insertDate = request.getParameter("insertDate");
 		String mno = request.getParameter("mno");
 		String mid = request.getParameter("mid");
+//		String mid = requset.getSession().getA
 		String mprice = request.getParameter("mprice");
 		String category = request.getParameter("category");
 		String cashCard = request.getParameter("cashCard");
