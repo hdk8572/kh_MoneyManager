@@ -33,6 +33,6 @@
     <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="com.google.gson.Gson"/>
     <fullyQualifiedTypeName name="java.io.PrintWriter"/>
-    <fullyQualifiedTypeName name="semi.dk.user.model.dto.UserDto"/>
     <fullyQualifiedTypeName name="semi.dk.user.model.service.UserService"/>
+    <fullyQualifiedTypeName name="semi.dk.user.model.dto.UserDto"/>
 </qualifiedTypeNameHistroy>
