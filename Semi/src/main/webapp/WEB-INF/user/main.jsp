@@ -10,7 +10,8 @@
 </head>
 <body>
 	<form>
-	<td><input type="date" name="insertDate" id="searchDate"></td>
+	<input type="date" name="searchDate" id="searchDate">
+	<button type="button" id="searchDateBtn">검색</button>
 	</form>
 	<div id="wrap-list" >
 		<table border="1">
@@ -105,6 +106,7 @@
 	document.getElementById('currentDate').value = new Date().toISOString().substring(0, 10);
 	
   	$("#btn_Insert").click(insertListClickHandler);
+  	$("#searchDateBtn").click(searchDateClickHandler);
 	
 	function insertListClickHandler() {
 		var dataQuery = $("#frmInsert").serialize();
@@ -127,6 +129,23 @@
 			}
 		})
 	}
+
+	
+	function searchDateClickHandler() {
+		console.log("날짜 검색!");
+		var searchDateValue = $("#searchDate").val();
+		console.log("searchDate :"+searchDateValue);
+		$.ajax({
+			url: "${pageContext.request.contextPath}/ajaxSearch"
+			,type: "post"
+			,data: {searchDate: searchDateValue}
+			,dataType: "json"
+			,success: function(result) {
+				displayList(result);
+			}
+		})
+	}
+	
 	function displayList(data) {
 		var htmlVal="";
 		if(data==null || data.length == 0){
