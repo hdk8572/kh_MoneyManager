@@ -33,4 +33,12 @@ public class UserService {
 		close(conn);
 		return result;
 	}
+	
+	public UserDto selectOne(String insertDate) {
+		UserDto result = null;
+		Connection conn = getConnection();
+		result = dao.selectOne(conn, insertDate);
+		close(conn);
+		return result;
+	}
 }

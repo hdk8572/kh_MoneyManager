@@ -75,4 +75,37 @@ public class UserDao {
 		}
 		return result;
 	}
+	// 리스트 검색
+	public UserDto selectOne(Connection conn, String insertDate) {
+		
+		String query = "SELECT INSERT_DATE, MNO, MID, MPRICE, CATEGORY, CASHCARD, MNAME, DESCRIPTION FROM EX WHERE INSERT_DATE = ?";
+
+		UserDto result = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		
+		try {
+			stmt = conn.prepareStatement(query);
+			stmt.setString(1, insertDate); 
+			rs = stmt.executeQuery();
+			
+			if(rs.next()) {
+				result = new UserDto();
+				result.setInsertDate(rs.getString("INSERT_DATE"));
+				result.setMno(rs.getString("MNO"));
+				result.setMid(rs.getString("MID"));
+				result.setMprice(rs.getString("MPRICE"));
+				result.setCategory(rs.getString("CATEGORY"));
+				result.setCashCard(rs.getString("CASHCARD"));
+				result.setMname(rs.getString("MNAME"));
+				result.setDescription(rs.getString("DESCRIPTION"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(stmt);
+		}
+		return result;
+	}
 }

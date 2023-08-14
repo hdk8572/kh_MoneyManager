@@ -9,6 +9,9 @@
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 </head>
 <body>
+	<form>
+	<td><input type="date" name="insertDate" id="searchDate"></td>
+	</form>
 	<div id="wrap-list" >
 		<table border="1">
 			<tr>

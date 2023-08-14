@@ -3,6 +3,7 @@ package semi.dk.member.service;
 import static semi.dk.common.DkTemplate.*;
 
 import java.sql.Connection;
+import java.util.List;
 
 import semi.dk.member.model.dao.MemberDao;
 import semi.dk.member.model.dto.MemberDto;

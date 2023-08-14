@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import semi.dk.member.model.dto.MemberDto;
 import semi.dk.user.model.dto.UserDto;
@@ -51,6 +52,8 @@ public class MemberDao {
 			pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			close(pstmt);
 		}
 		return result;
 	}

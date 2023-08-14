@@ -22,39 +22,41 @@ import semi.dk.user.model.dto.UserDto;
 public class SignupController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
+	private MemberService service = new MemberService();
+	
     public SignupController() {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("doGet");
-		request.getRequestDispatcher("/WEB-INF/user/signup.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/member/signup.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("doPost");
-/*
-		BufferedReader br = request.getReader();
-		String signData = br.readLine();
-		System.out.println(signData);
 		
-		Gson gson = new Gson();
-		MemberDto[] memberArray = gson.fromJson(signData, MemberDto[].class);
-		List<MemberDto> memberList = Arrays.asList(memberArray);
-		System.out.println(memberList);
-		
-		for(MemberDto vo : memberList) {
-			System.out.println(vo.getMid());
-		}*/
-		
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+		response.setCharacterEncoding("UTF-8");
 		String mid = request.getParameter("mid");
 		String mpwd = request.getParameter("mpwd");
 		String mname = request.getParameter("mname");
 		String memail = request.getParameter("memail");
 		
 		MemberDto ivo = new MemberDto(mid, mpwd, mname, memail);
+		System.out.println("ivo :" + ivo);
+		int result = service.join(ivo);	
+		System.out.println("result :" + result);
+        if (result == 0) {
+			/* response.sendRedirect(request.getContextPath() + "/success.jsp"); */
+        	System.out.println("회원가입 성공");
+        } else {
+			/* response.sendRedirect(request.getContextPath() + "/error.jsp"); */
+        	System.out.println("회원가입 실패");
+        }
 		
-		MemberService service = new MemberService();
-		int result = service.join(ivo);
-		
-		
+        request.getRequestDispatcher("/").forward(request, response);
+        		
+        
+	}
 }
