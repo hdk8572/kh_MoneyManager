@@ -16,7 +16,16 @@
 		<input type="password" name="mpwd" placeholder="비밀번호를 입력해주세요.">
 		<br>
 		<br>
-		<input type="submit" value="로그인"> <input type="button" id="btn-join" value="회원가입">
+		<input type="submit" value="로그인"> <input type="button" id="btnJoin" value="회원가입">
 	</form>
+<script>
+	$("#btnJoin").click(joinClick);
+	
+	function joinClick() {
+		window.location.href = "signup"
+	}
+	
+
+</script>
 </body>
 </html>

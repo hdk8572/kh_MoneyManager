@@ -15,6 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 
 import semi.dk.member.model.dto.MemberDto;
+import semi.dk.member.service.MemberService;
+import semi.dk.user.model.dto.UserDto;
 
 @WebServlet("/signup")
 public class SignupController extends HttpServlet {
@@ -30,13 +32,10 @@ public class SignupController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("doPost");
-
+/*
 		BufferedReader br = request.getReader();
 		String signData = br.readLine();
 		System.out.println(signData);
-//		여러줄 읽지 않아도 됨. 1줄만 읽으면 됨.
-//		while( (reqData = br.readLine()) != null) {
-//		}
 		
 		Gson gson = new Gson();
 		MemberDto[] memberArray = gson.fromJson(signData, MemberDto[].class);
@@ -45,7 +44,17 @@ public class SignupController extends HttpServlet {
 		
 		for(MemberDto vo : memberList) {
 			System.out.println(vo.getMid());
-		}
-	}
-
+		}*/
+		
+		String mid = request.getParameter("mid");
+		String mpwd = request.getParameter("mpwd");
+		String mname = request.getParameter("mname");
+		String memail = request.getParameter("memail");
+		
+		MemberDto ivo = new MemberDto(mid, mpwd, mname, memail);
+		
+		MemberService service = new MemberService();
+		int result = service.join(ivo);
+		
+		
 }

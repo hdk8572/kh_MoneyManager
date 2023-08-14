@@ -1,8 +1,4 @@
 INDEX VERSION 1.131
-C:\.workspace\Github\kh_MoneyManager\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1100757513.index
-\Semi_backup\src\main\java
-C:\.workspace\Github\kh_MoneyManager\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3949245123.index
-\Semi_backup\src\main\java
 C:\.workspace\Github\kh_MoneyManager\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2382335509.index
 \Semi\src\main\java
 C:\.workspace\Github\kh_MoneyManager\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\428134767.index

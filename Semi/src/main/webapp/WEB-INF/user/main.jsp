@@ -59,14 +59,10 @@
 				<td>가격</td>
 				<td><input type="text" name="mprice" ></td>
 			</tr>
-<!-- 			<tr>
-				<td>분류</td>
-				<td><input type="text" name="category" ></td>
-			</tr> -->
-			<tr>
+ 			<tr>
 				<td>분류</td>
 				<td>
-				<select>
+				<select name="category">
 				<option>식비</option>
 				<option>교통/차량</option>
 				<option>주거/통신비</option>
@@ -80,14 +76,10 @@
 				</select>
 				</td>
 			</tr>
-<!-- 			<tr>
-				<td>자산</td>
-				<td><input type="text" name="cashCard" ></td>
-			</tr> -->
-			<tr>
+ 			<tr>
 				<td>자산</td>
 				<td>
-				<select>
+				<select name="cashCard">
 				<option>현금</option>
 				<option>체크카드</option>
 				<option>신용카드</option>
@@ -96,7 +88,7 @@
 			</tr>
 			<tr>
 				<td>이름</td>
-				<td><input type="text" name="mname" ></td>
+				<td><input type="text" name="mname" required></td>
 			</tr>
 			<tr>
 				<td>설명</td>
@@ -172,7 +164,7 @@
 			`;
 			$("#wrap-list").html(htmlVal);
 			alert("등록에 성공");
-			$("#frmInsert").value() = [];
+/* 			$("#frmInsert").value() = []; */
 
 	//$("#wrap-list table>tbody>tr:first-child:not").remove();
 	//$("#wrap-list table>tbody").append(htmlVal);

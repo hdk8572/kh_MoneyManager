@@ -23,11 +23,18 @@ public class LoginController extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		/*
+		 * System.out.println("보냈어요");
+		 * 
+		 * request.getRequestDispatcher("/WEB-INF/user/signup.jsp").forward(request,
+		 * response); System.out.println("갔니?");
+		 */
+	}	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("보냈어요");
 
-		request.getRequestDispatcher("login.jsp").forward(request, response);
-	}	
-//	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//	}
+		request.getRequestDispatcher("/WEB-INF/user/signup.jsp").forward(request, response);
+		System.out.println("갔니?");
+	}
 
 }
