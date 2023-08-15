@@ -34,11 +34,11 @@ public class AjaxDeleteController extends HttpServlet {
 
         int deletedList = new UserService().delete(mno);
 
-        response.setContentType("application/json");
-        response.setCharacterEncoding("UTF-8");
+
         PrintWriter out = response.getWriter();
         out.print(new Gson().toJson(deletedList)); // Using Gson library for JSON conversion
         out.flush();
+        out.close();
 	}
 
 }
