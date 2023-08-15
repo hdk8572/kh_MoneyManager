@@ -38,7 +38,7 @@ public class LoginDoController extends HttpServlet {
 			sendUrl += "/user/main";
 		} else {
 			System.out.println("로그인 실패");
-			sendUrl = "/";
+//			sendUrl = "/";
 		}
 		response.sendRedirect(sendUrl);
 	}

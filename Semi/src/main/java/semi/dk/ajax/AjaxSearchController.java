@@ -1,6 +1,9 @@
 package semi.dk.ajax;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -28,6 +31,15 @@ public class AjaxSearchController extends HttpServlet {
 		System.out.println("searchDate :"+searchDate);
 		UserDto dvo = service.selectOne(searchDate);
 		request.setAttribute("dvo", dvo);
+		
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		
+		PrintWriter out = response.getWriter();
+        out.write("[");
+        out.write("]");
+        out.close();
 	}
 
 }

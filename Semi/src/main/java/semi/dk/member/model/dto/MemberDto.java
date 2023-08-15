@@ -2,11 +2,6 @@ package semi.dk.member.model.dto;
 
 public class MemberDto {
 	
-	/*"MID"	VARCHAR2(20)		NOT NULL,
-	"MPWD"	VARCHAR2(20)		NOT NULL,
-	"MNAME"	VARCHAR2(20)		NOT NULL,
-	"MEMAIL"	VARCHAR2(50)		NOT NULL*/
-	
 	private String mid;
 	private String mpwd; 
 	private String mname;

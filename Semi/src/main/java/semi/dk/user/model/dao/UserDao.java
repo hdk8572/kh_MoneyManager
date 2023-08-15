@@ -15,7 +15,7 @@ public class UserDao {
 	// 리스트 조회 (** List)
 	public List<UserDto> selectList(Connection conn) {
 		
-		String query = "SELECT INSERT_DATE, MNO, MID, MPRICE, CATEGORY, CASHCARD, MNAME, DESCRIPTION FROM EX";
+		String query = "SELECT INSERT_DATE, MNO, MID, MPRICE, CATEGORY, CASHCARD, MNAME, DESCRIPTION FROM EX ORDER BY MNO";
 
 		List<UserDto> result = new ArrayList<UserDto>();
 		PreparedStatement stmt = null;
@@ -107,5 +107,23 @@ public class UserDao {
 			close(stmt);
 		}
 		return result;
+	}
+	// 한 행 삭제
+	public int delete(Connection conn, String mno) {
+		
+		int delete = 0;
+		
+		String query = "DELETE FROM EX WHERE MNO= ?";
+		PreparedStatement stmt = null;
+		try {
+			stmt = conn.prepareStatement(query);
+			stmt.setString(1, mno);
+			delete = stmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(stmt);
+		}
+		return delete;
 	}
 }

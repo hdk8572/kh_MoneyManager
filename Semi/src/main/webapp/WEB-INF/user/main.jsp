@@ -37,8 +37,8 @@
 				<td>${ul.mname}</td>
 				<td>${ul.description}</td>
 				<td>
-				<button type="button">수정</button>
-				<button type="button">삭제</button>
+				<button type="button" class="edit-btn">수정</button>
+				<button type="button" class="delete-btn" data-mno="${ul.mno}">삭제</button>
 				</td>
 			</tr>
 			</c:forEach>
@@ -51,10 +51,6 @@
 				<td>날짜</td>
 				<td><input type="date" name="insertDate" id="currentDate"></td>
 			</tr>
-<!-- 		<tr>
-				<td>등록번호</td>
-				<td><input type="text" name="mno"></td>
-			</tr> -->
 			<tr>
 				<td>아이디</td>
 				<td><input type="text" value="${currentId}" name="mid" readonly></td>
@@ -107,6 +103,7 @@
 	
   	$("#btn_Insert").click(insertListClickHandler);
   	$("#searchDateBtn").click(searchDateClickHandler);
+  	$(".delete-btn").click(deleteBtnClickHandler);
 	
 	function insertListClickHandler() {
 		var dataQuery = $("#frmInsert").serialize();
@@ -129,8 +126,70 @@
 			}
 		})
 	}
-
 	
+	function deleteBtnClickHandler() {
+        var mno = $(this).data("mno"); // Get the value of the data-mno attribute
+        console.log(mno);
+        $.ajax({
+            url: "${pageContext.request.contextPath}/ajaxDelete",
+            type: "post",
+            data: { mno: mno }, // Send the mno value to the servlet
+            dataType: "json",
+            success: function (result) {
+                console.log("Delete success:");
+                console.log(result);
+                displayDeleteList(result);
+            },
+            error: function () {
+                console.log("Delete error:");
+                console.log(result);
+            },
+        });
+    }
+	
+	function displayDeleteList(data) {
+	    var htmlVal = "";
+	    if (data == null || data.length === 0) {
+	        alert("삭제했습니다.");
+	    } else {
+	    	htmlVal+=`
+				<table border="1">
+			<tbody>
+				<tr>
+					<td>날짜</td>
+					<td>번호</td>
+					<td>등록아이디</td>
+					<td>가격</td>
+					<td>품목분류</td>
+					<td>자산</td>
+					<td>이름</td>
+					<td>설명</td>
+				</tr>
+				`;
+				for(var i=0;i<data.length;i++){
+					var ull = data[i];
+				htmlVal+=`
+				<tr>
+					<td>\${ull.insertDate}</td>
+					<td>\${ull.mno}</td>
+					<td>\${ull.mid}</td>
+					<td>\${ull.mprice}</td>
+					<td>\${ull.category}</td>
+					<td>\${ull.cashCard}</td>
+					<td>\${ull.mname}</td>
+					<td>\${ull.description}</td>
+					<td><button type="button" class="edit-btn">\수정</button></td>
+					<td><button type="button" class="delete-btn" data-mno="${ul.mno}">\삭제</button></td>
+				</tr>`;
+			}
+			htmlVal+=`
+				</tbody>
+				</table>`;
+			$("#wrap-list").html(htmlVal);
+			alert("삭제 성공");
+	    }
+	}
+    
 	function searchDateClickHandler() {
 		console.log("날짜 검색!");
 		var searchDateValue = $("#searchDate").val();
@@ -141,7 +200,7 @@
 			,data: {searchDate: searchDateValue}
 			,dataType: "json"
 			,success: function(result) {
-				displayList(result);
+				displaySelectOne(result);
 			}
 		})
 	}
@@ -177,7 +236,10 @@
 					<td>\${ul.cashCard}</td>
 					<td>\${ul.mname}</td>
 					<td>\${ul.description}</td>
+					<td><button type="button" class="edit-btn">\수정</button></td>
+					<td><button type="button" class="delete-btn" data-mno="${ul.mno}">\삭제</button></td>
 				</tr>
+				
 				`;
 				}
 			htmlVal+=`
@@ -191,6 +253,10 @@
 	//$("#wrap-list table>tbody>tr:first-child:not").remove();
 	//$("#wrap-list table>tbody").append(htmlVal);
 		}
+	}
+	
+	function displaySelectOne(result) {
+				
 	}
 </script>
 </html>

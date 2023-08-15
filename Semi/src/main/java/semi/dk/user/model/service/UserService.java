@@ -41,4 +41,13 @@ public class UserService {
 		close(conn);
 		return result;
 	}
+	
+	// 한 행 삭제 - 주로 PK로 where조건
+	public int delete(String mno){
+		int result = 0;
+		Connection conn = getConnection();
+		result = dao.delete(conn, mno);
+		close(conn);
+		return result;
+	}
 }
