@@ -1,3 +1,5 @@
+<link href="${pageContext.request.contextPath }/resources/css/reset.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath }/resources/css/cssTable.css" rel="stylesheet">
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -7,95 +9,134 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+
 </head>
 <body>
-	<form>
-	<input type="date" name="searchDate" id="searchDate">
-	<button type="button" id="searchDateBtn">검색</button>
-	</form>
-	<div id="wrap-list" >
-		<table border="1">
-			<tr>
-				<td>날짜</td>
-				<td>번호</td>
-				<td>등록아이디</td>
-				<td>가격</td>
-				<td>품목분류</td>
-				<td>자산</td>
-				<td>이름</td>
-				<td>설명</td>
-				<td></td>
-			</tr>
-			<c:forEach items="${ulist}" var="ul">			
-			<tr>
-				<td>${ul.insertDate}</td>
-				<td>${ul.mno}</td>
-				<td>${ul.mid}</td>
-				<td>${ul.mprice}</td>
-				<td>${ul.category}</td>
-				<td>${ul.cashCard}</td>
-				<td>${ul.mname}</td>
-				<td>${ul.description}</td>
-				<td>
-				<button type="button" class="delete-btn" data-mno="${ul.mno}">삭제</button>
-				</td>
-			</tr>
-			</c:forEach>
+	<div id="wrap-table">
+		<div id="wrap-list"  class="tableFixHead">
+			<table border="1px" id="addOne">
+			 	<thead>
+				<tr>
+					<td class="fixedHeader">날짜</td>
+					<td class="fixedHeader">번호</td>
+					<td class="fixedHeader">등록아이디</td>
+					<td class="fixedHeader">가격</td>
+					<td class="fixedHeader">품목분류</td>
+					<td class="fixedHeader">자산</td>
+					<td class="fixedHeader">이름</td>
+					<td class="fixedHeader">설명</td>
+					<td class="fixedHeader"></td>
+				</tr>
+				</thead>
+				<tbody>
+				<c:forEach items="${ulist}" var="ul">			
+				<tr>
+					<td>${ul.insertDate}</td>
+					<td>${ul.mno}</td>
+					<td>${ul.mid}</td>
+					<td>${ul.mprice}</td>
+					<td>${ul.category}</td>
+					<td>${ul.cashCard}</td>
+					<td>${ul.mname}</td>
+					<td>${ul.description}</td>
+					<td>
+					<button type="button" class="delete-btn" data-mno="${ul.mno}">삭제</button>
+					</td>
+				</tr>
+				</c:forEach>
+				</tbody>
+			</table>
+		</div>
+		<div>
+		<form id="frmInsert">
+	 		<table>
+				<tr>
+					<td>날짜</td>
+					<td><input type="date" name="insertDate" id="currentDate"></td>
+				</tr>
+				<tr>
+					<td>아이디</td>
+					<td><input type="text" value="${currentId}" name="mid" readonly></td>
+				</tr>
+				<tr>
+					<td>가격</td>
+					<td><input type="text" name="mprice" ></td>
+				</tr>
+	 			<tr>
+					<td>분류</td>
+					<td>
+					<select name="category">
+					<option>식비</option>
+					<option>교통/차량</option>
+					<option>주거/통신비</option>
+					<option>문화생활</option>
+					<option>마트/편의점</option>
+					<option>패션/미용</option>
+					<option>생활용품</option>
+					<option>건강</option>
+					<option>교육</option>
+					<option>경조사/회비</option>
+					</select>
+					</td>
+				</tr>
+	 			<tr>
+					<td>자산</td>
+					<td>
+					<select name="cashCard">
+					<option>현금</option>
+					<option>체크카드</option>
+					<option>신용카드</option>
+					</select>
+					</td>
+				</tr>
+				<tr>
+					<td>이름</td>
+					<td><input type="text" name="mname" required></td>
+				</tr>
+				<tr>
+					<td>설명</td>
+					<td><input type="text" name="descripion"></td>
+				</tr>
+				<tr></tr>
+			</table>
+			<br>
+			<button type="button" id="btn_Insert">등록</button>
+		</form>
+		<a href="${pageContext.request.contextPath}/">되돌아가기</a>
+		<form>
+		<input type="date" name="searchDate" id="searchDate">
+		<button type="button" id="searchDateBtn">검색</button>
+		</form>
+		</div>
+	</div>
+	
+	
+	<div class="tableFixHead">
+		<table>
+		<thead>
+		<tr><th>a</th></tr>
+		</thead>
+		<tbody>
+		<tr><th>a</th></tr>
+		<tr><th>a</th></tr>
+		<tr><th>a</th></tr>
+		<tr><th>a</th></tr>
+		<tr><th>a</th></tr>
+		<tr><th>a</th></tr>
+		<tr><th>a</th></tr>
+		<tr><th>a</th></tr>
+		<tr><th>a</th></tr>
+		<tr><th>a</th></tr>
+		<tr><th>a</th></tr>
+		<tr><th>a</th></tr>
+		<tr><th>a</th></tr>
+		<tr><th>a</th></tr>
+		<tr><th>a</th></tr>
+		<tr><th>a</th></tr>
+		<tr><th>a</th></tr>
+		</tbody>
 		</table>
 	</div>
-		<a href="${pageContext.request.contextPath}/">되돌아가기</a>
-	<form id="frmInsert">
- 		<table border="1">
-			<tr>
-				<td>날짜</td>
-				<td><input type="date" name="insertDate" id="currentDate"></td>
-			</tr>
-			<tr>
-				<td>아이디</td>
-				<td><input type="text" value="${currentId}" name="mid" readonly></td>
-			</tr>
-			<tr>
-				<td>가격</td>
-				<td><input type="text" name="mprice" ></td>
-			</tr>
- 			<tr>
-				<td>분류</td>
-				<td>
-				<select name="category">
-				<option>식비</option>
-				<option>교통/차량</option>
-				<option>주거/통신비</option>
-				<option>문화생활</option>
-				<option>마트/편의점</option>
-				<option>패션/미용</option>
-				<option>생활용품</option>
-				<option>건강</option>
-				<option>교육</option>
-				<option>경조사/회비</option>
-				</select>
-				</td>
-			</tr>
- 			<tr>
-				<td>자산</td>
-				<td>
-				<select name="cashCard">
-				<option>현금</option>
-				<option>체크카드</option>
-				<option>신용카드</option>
-				</select>
-				</td>
-			</tr>
-			<tr>
-				<td>이름</td>
-				<td><input type="text" name="mname" required></td>
-			</tr>
-			<tr>
-				<td>설명</td>
-				<td><input type="text" name="descripion"></td>
-			</tr>
-		</table>
-		<button type="button" id="btn_Insert">등록</button>
-	</form>
 </body>
 <script>
 	document.getElementById('currentDate').value = new Date().toISOString().substring(0, 10);
@@ -123,6 +164,10 @@
 				console.log(result);
 			}
 		})
+		
+		
+		
+		
 	}
 	
 	function deleteBtnClickHandler() {
@@ -202,6 +247,7 @@
 			</tbody>
 				</table>`;
 			$("#wrap-list").html(htmlVal);
+		  	$(".delete-btn").click(deleteBtnClickHandler);
 			alert("등록에 성공");
 			$("#frmInsert input[type='text'][name!='mid']").val('');
 			$("#frmInsert select[name!='category'][name!='cashCard']").val($("#frmInsert select option:first").val());

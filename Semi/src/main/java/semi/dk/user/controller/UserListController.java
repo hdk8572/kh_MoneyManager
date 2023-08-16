@@ -31,6 +31,7 @@ public class UserListController extends HttpServlet {
 		request.setAttribute("ulist", ulist);
 		
 		request.getRequestDispatcher("/WEB-INF/user/main.jsp").forward(request, response);
+//		request.getRequestDispatcher("/WEB-INF/user/sticky_test.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
