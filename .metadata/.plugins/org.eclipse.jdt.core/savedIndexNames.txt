@@ -4,6 +4,7 @@ INDEX VERSION 1.131+C:\_Workspace\Github\kh_MoneyManager\.metadata\.plugins\org.
 466903070.index
 2958211537.index
 1865797976.index
+260087872.index
 87936981.index
 4270053101.index
 3400992869.index
