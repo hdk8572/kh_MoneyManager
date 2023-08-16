@@ -39,10 +39,6 @@
 <script>
     $(document).ready(function() {
         $("form").submit(function(event) {
-            // 이 부분에서 실제 회원가입 처리를 수행합니다.
-            // 성공 시에 아래 코드를 실행합니다.
-            
-            // 회원가입 성공 알림창 띄우기
             alert("회원가입에 성공했습니다.");
         });
     });

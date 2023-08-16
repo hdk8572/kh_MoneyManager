@@ -100,10 +100,16 @@ INSERT INTO EX VALUES ('2023-07-27', SEQ_EX.NEXTVAL, 'kh0001', '2900', '교통/�
 ;
 INSERT INTO EX VALUES ('2023-07-27', SEQ_EX.NEXTVAL, 'kh0001', '5100', '마트/편의점', '체크카드', '아보카도바나나쥬스', NULL)
 ;
-INSERT INTO EX VALUES ('2023-08-16', SEQ_EX.NEXTVAL, 'kh0002', '1200', '교통/차량', '체크카드', '버스비', NULL)
+INSERT INTO EX VALUES ('2023-08-16', SEQ_EX.NEXTVAL, 'kh0001', '71000', '주거/통신비', '체크카드', '통신비', NULL)
 ;
-INSERT INTO EX VALUES ('2023-08-16', SEQ_EX.NEXTVAL, 'kh0002', '9800', '마트/편의점', '체크카드', '아보카도바나나쥬스', NULL)
+INSERT INTO EX VALUES ('2023-08-16', SEQ_EX.NEXTVAL, 'kh0001', '3900', '마트/편의점', '체크카드', '콜라', NULL)
 ;
+INSERT INTO EX VALUES ('2023-08-16', SEQ_EX.NEXTVAL, 'kh0001', '10200', '교통/차량', '체크카드', '택시비', NULL)
+;
+
+
+
+
 
 commit;
 
