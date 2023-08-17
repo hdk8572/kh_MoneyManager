@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+body{
+	display: flex;
+  	justify-content: center;
+ 	align-items: center;
+ 	min-height: 100vh;
+}
+
+.wrap-login {
+	width: 500px;
+    height: 500px;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	border-radius: 10px;
+	padding: 10px 100px;
+}
+
+.login {
+	height:150px;
+
+}
+
+.login h1 {
+	font-size: 4ex;
+	position: relative;
+    top: 100px;
+}
+
+.input-login {
+	height:150px;
+}
+
+.input-login form {
+	padding-top: 48px;
+}
+
+.input-login form input[type="submit"],[type="button"] {
+    width: 100px;
+    height: 35px;
+    border-radius: 20px;
+    border: transparent;
+    position:relative;
+    top:45px;
+}
+
+.input-login form input[type="button"] {
+	float: left;
+}
+.input-login form input[type="submit"] {
+	float: right;
+}
+
+.input-login form input[type="text"], .input-login form input[type="password"] {
+	border: transparent;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    font-size: 16px;
+    width: 300px;
+    
+}
+
