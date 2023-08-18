@@ -6,8 +6,13 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="font"/>
+		<item key="selection" value=""/>
 		<list key="findhistory">
+			<item value="mapper_resultMap"/>
+			<item value="resultMap3"/>
+			<item value="jdbc"/>
+			<item value="UserDto2"/>
+			<item value="UserDto2+"/>
 			<item value="font"/>
 			<item value="style"/>
 			<item value="840"/>
@@ -18,10 +23,6 @@
 			<item value="&apos;fixedHeader&apos;"/>
 			<item value="addOne"/>
 			<item value="bottom"/>
-			<item value="delete-btn"/>
-			<item value="searchDateBtn"/>
-			<item value="sysytem"/>
-			<item value="descripion"/>
 		</list>
 		<list key="replacehistory">
 			<item value="&quot;fixedHeader&quot;"/>

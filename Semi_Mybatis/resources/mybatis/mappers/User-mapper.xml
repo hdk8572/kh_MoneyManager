@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="user1">
+	
+	<resultMap type="UserDto" id="resultMap">
+		<id property="mid" column="MID"/>
+		<result property="insertDate" column="INSERT_DATE"/>
+		<result property="mno" column="MNO"/>
+		<result property="mprice" column="MPRICE"/>
+		<result property="category" column="CATEGORY"/>
+		<result property="cashCard" column="CASHCARD"/>
+		<result property="mname" column="MNAME"/>
+		<result property="description" column="DESCRIPTION"/>
+	</resultMap>
+  
+  	<select id="selectList" resultType="UserDto">
+  		SELECT INSERT_DATE, MNO, MID, MPRICE, CATEGORY, CASHCARD, MNAME, DESCRIPTION 
+  		FROM EX
+  		ORDER BY MNO
+  	</select>
+  	
+<!--   	<select id="insert" resultType="UserDto" parameterType="string">
+  		INSERT INTO EX VALUES (#{insertDate}, (SELECT COALESCE(MAX(mno), 0) + 1 FROM EX), #{mid}, #{mprice}, #{category}, #{cashCard}, #{mname}, #{description})
+  	</select> -->
+  	
+  	<insert id="insert" parameterType="UserDto">
+  		INSERT INTO EX VALUES (#{insertDate}, (SELECT COALESCE(MAX(mno), 0) + 1 FROM EX), #{mid}, #{mprice}, #{category}, #{cashCard}, #{mname}, #{description})
+  	</insert>
+  	
+  	<select id="delete" resultType="UserDto" parameterType="string">
+  		DELETE FROM EX WHERE MNO = #{mno}
+  	</select>
+</mapper>
